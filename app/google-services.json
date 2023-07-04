@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "467818694025",
+    "project_id": "pinnacle-rit",
+    "storage_bucket": "pinnacle-rit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:467818694025:android:29c8c2320768df073e8d58",
+        "android_client_info": {
+          "package_name": "com.ritchennai.pinnacle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "467818694025-cda8rs857fnalnv5aoo01cda9mrcv2g2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCu9PAdEUfC9cMV3capyF189Qb2jo4P0aY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "467818694025-cda8rs857fnalnv5aoo01cda9mrcv2g2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

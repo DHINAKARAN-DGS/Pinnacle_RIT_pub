@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/rit"
+    android:layout_height="match_parent"
+    tools:context=".LeaderboardFragment">
+
+    <TextView
+        android:id="@+id/heading_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/raleway_semibold"
+        android:gravity="center"
+        android:letterSpacing="0.05"
+        android:text="@string/coding_nleaderboard"
+        android:textAllCaps="true"
+        android:textColor="#fff"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/heading_TextView"
+        app:srcCompat="@drawable/himalaya_1"
+        tools:ignore="ContentDescription" />
+
+    <FrameLayout
+        android:id="@+id/first_card_frame"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_border"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintTop_toTopOf="@id/imageView1">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/firstplace_profileCard"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="19dp">
+
+            <ImageView
+                android:id="@+id/firstplace_Image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/kishoretheeraj"
+                tools:ignore="ContentDescription,ImageContrastCheck" />
+
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/firstplace_Name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:gravity="end"
+        android:fontFamily="@font/raleway_semibold"
+        android:textAllCaps="true"
+        android:textSize="16sp"
+        android:textColor="#fff"
+        android:shadowColor="#000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/first_card_frame"
+        app:layout_constraintEnd_toStartOf="@id/first_card_frame"/>
+
+    <TextView
+        android:id="@+id/firstplace_Score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/montserrat"
+        android:textColor="#fff"
+        android:shadowColor="#000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        app:layout_constraintTop_toBottomOf="@id/firstplace_Name"
+        app:layout_constraintEnd_toStartOf="@id/first_card_frame"/>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView1"
+        app:srcCompat="@drawable/himalaya_2"
+        tools:ignore="ContentDescription,ImageContrastCheck" />
+
+    <FrameLayout
+        android:id="@+id/second_card_frame"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="-24dp"
+        android:background="@drawable/rounded_border"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintTop_toTopOf="@id/imageView2">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/secondplace_profileCard"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="19dp">
+
+            <ImageView
+                android:id="@+id/secondplace_Image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/kishoretheeraj"
+                tools:ignore="ContentDescription,ImageContrastCheck" />
+
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/secondplace_Name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:gravity="end"
+        android:fontFamily="@font/raleway_semibold"
+        android:textAllCaps="true"
+        android:textSize="16sp"
+        android:textColor="#fff"
+        android:shadowColor="#000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/second_card_frame"
+        app:layout_constraintEnd_toStartOf="@id/second_card_frame"/>
+
+    <TextView
+        android:id="@+id/secondplace_Score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/montserrat"
+        android:textColor="#fff"
+        android:shadowColor="#000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        app:layout_constraintTop_toBottomOf="@id/secondplace_Name"
+        app:layout_constraintEnd_toStartOf="@id/second_card_frame"/>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView2"
+        app:srcCompat="@drawable/himalaya_3"
+        tools:ignore="ContentDescription,ImageContrastCheck" />
+
+    <FrameLayout
+        android:id="@+id/third_card_frame"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/rounded_border"
+        app:layout_constraintStart_toStartOf="@id/guideline2"
+        app:layout_constraintTop_toTopOf="@id/imageView3">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/thirdplace_profileCard"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="19dp">
+
+            <ImageView
+                android:id="@+id/thirdplace_Image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/kishoretheeraj"
+                tools:ignore="ContentDescription" />
+
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/thirdplace_Name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:gravity="start"
+        android:fontFamily="@font/raleway_semibold"
+        android:textAllCaps="true"
+        android:textSize="16sp"
+        android:textColor="#fff"
+        android:shadowColor="#000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/third_card_frame"
+        app:layout_constraintStart_toEndOf="@id/third_card_frame"/>
+
+    <TextView
+        android:id="@+id/thirdplace_Score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/montserrat"
+        android:textColor="#fff"
+        android:shadowColor="#000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        app:layout_constraintTop_toBottomOf="@id/thirdplace_Name"
+        app:layout_constraintStart_toEndOf="@id/third_card_frame"/>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView3"
+        app:srcCompat="@drawable/himalaya_4"
+        tools:ignore="ContentDescription" />
+
+    <FrameLayout
+        android:id="@+id/fourth_card_frame"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="-20dp"
+        android:background="@drawable/rounded_border"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintTop_toTopOf="@id/imageView4">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/fourthplace_profileCard"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="19dp">
+
+            <ImageView
+                android:id="@+id/fourthplace_Image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/kishoretheeraj"
+                tools:ignore="ContentDescription,ImageContrastCheck" />
+
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/fourthplace_Name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:gravity="end"
+        android:fontFamily="@font/raleway_semibold"
+        android:textAllCaps="true"
+        android:textSize="16sp"
+        android:textColor="#fff"
+        android:shadowColor="#000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/fourth_card_frame"
+        app:layout_constraintEnd_toStartOf="@id/fourth_card_frame"/>
+
+    <TextView
+        android:id="@+id/fourthplace_Score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/montserrat"
+        android:textColor="#fff"
+        android:shadowColor="#000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        app:layout_constraintTop_toBottomOf="@id/fourthplace_Name"
+        app:layout_constraintEnd_toStartOf="@id/fourth_card_frame"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/leaderboard_RecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/loading_ProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

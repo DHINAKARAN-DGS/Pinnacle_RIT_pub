@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/holder_Card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/sno_TextView"
+                android:layout_width="50dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:fontFamily="@font/montserrat"
+                android:textSize="15sp"
+                android:textColor="#000"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/_123" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profileCard"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/sno_TextView"
+                app:cardCornerRadius="25dp">
+
+                <ImageView
+                    android:id="@+id/profile_user_Image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/kishoretheeraj"
+                    tools:ignore="ContentDescription" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/username_TextView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:paddingStart="16dp"
+                android:letterSpacing="0.05"
+                android:gravity="bottom"
+                android:textSize="15sp"
+                android:textAllCaps="true"
+                android:fontFamily="@font/montserrat"
+                android:textColor="#000"
+                app:layout_constraintTop_toTopOf="@id/profileCard"
+                app:layout_constraintStart_toEndOf="@id/profileCard"
+                app:layout_constraintBottom_toTopOf="@id/points_TextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/kishore_theeraj"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/points_TextView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:paddingStart="16dp"
+                android:fontFamily="@font/montserrat"
+                android:textSize="15sp"
+                android:textColor="#595959"
+                android:gravity="top"
+                app:layout_constraintTop_toBottomOf="@id/username_TextView"
+                app:layout_constraintStart_toEndOf="@id/profileCard"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/profileCard"
+                android:text="@string/_50_points"
+                tools:ignore="RtlSymmetry" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ProfileFragment">
+
+        <ImageView
+            android:id="@+id/profileBg_ImageView"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription,ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/profile_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:fontFamily="@font/raleway_bold"
+            android:text="@string/profile"
+            android:textColor="#000"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/profileBg_ImageView"
+            app:layout_constraintStart_toStartOf="@id/profileBg_ImageView"
+            app:layout_constraintTop_toTopOf="@id/profileBg_ImageView"
+            app:layout_constraintVertical_bias="0.4" />
+
+        <FrameLayout
+            android:id="@+id/card_frame"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/rounded_border"
+            app:layout_constraintBottom_toBottomOf="@+id/profile_TextView"
+            app:layout_constraintEnd_toEndOf="@id/profileBg_ImageView"
+            app:layout_constraintTop_toTopOf="@+id/profile_TextView">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profile_Card"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="28dp">
+
+                <ImageView
+                    android:id="@+id/profile_Image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/kishoretheeraj"
+                    tools:ignore="ContentDescription" />
+
+            </androidx.cardview.widget.CardView>
+        </FrameLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="-16dp"
+            android:backgroundTint="#006AFC"
+            android:clickable="true"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:src="@android:drawable/ic_input_add"
+            app:layout_constraintBottom_toBottomOf="@+id/card_frame"
+            app:layout_constraintEnd_toEndOf="@id/profileBg_ImageView"
+            app:tint="#fff"
+            tools:ignore="ContentDescription,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/kishore_theeraj"
+            android:textAllCaps="true"
+            android:textColor="#006AFC"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profileBg_ImageView" />
+
+        <TextView
+            android:id="@+id/staffId_TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/kishore_theeraj"
+            android:textAllCaps="true"
+            android:textColor="#888888"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/username"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/overall_TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/overall"
+            android:textColor="#888888"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/staffId_TextView"
+            tools:ignore="TextContrastCheck" />
+
+        <View
+            android:id="@+id/overall_cl_ProgressBar"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:background="#01BD01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/overall_TextView" />
+
+        <View
+            android:id="@+id/overall_dl_ProgressBar"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:background="#FC7419"
+            app:layout_constraintEnd_toEndOf="@id/vertical_guide"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/overall_TextView" />
+
+        <View
+            android:id="@+id/overall_me_ProgressBar"
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:background="#006AFC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/overall_TextView" />
+
+        <TextView
+            android:id="@+id/overall_cl_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:gravity="end"
+            android:textAllCaps="true"
+            android:text="@string/college_nleader"
+            android:textColor="#01BD01"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@id/overall_cl_ProgressBar"
+            app:layout_constraintEnd_toEndOf="@id/overall_cl_ProgressBar"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/overall_dl_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="@string/dept_nleader"
+            android:textColor="#FC7419"
+            android:textSize="10sp"
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toTopOf="@id/overall_dl_ProgressBar"
+            app:layout_constraintStart_toEndOf="@id/overall_dl_ProgressBar"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/overall_me_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text="@string/you"
+            android:textAllCaps="true"
+            android:textColor="#006AFC"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@id/overall_me_ProgressBar"
+            app:layout_constraintTop_toBottomOf="@id/overall_me_ProgressBar"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/coding_TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/coding"
+            android:textColor="#888888"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/overall_me_ProgressBar"
+            tools:ignore="TextContrastCheck" />
+
+        <View
+            android:id="@+id/coding_cl_ProgressBar"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:background="#01BD01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/coding_TextView" />
+
+        <View
+            android:id="@+id/coding_dl_ProgressBar"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:background="#FC7419"
+            app:layout_constraintEnd_toEndOf="@id/vertical_guide"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/coding_TextView" />
+
+        <View
+            android:id="@+id/coding_me_ProgressBar"
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:background="#006AFC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/coding_TextView" />
+
+        <TextView
+            android:id="@+id/coding_cl_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:gravity="end"
+            android:textAllCaps="true"
+            android:text="@string/college_nleader"
+            android:textColor="#01BD01"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@id/coding_cl_ProgressBar"
+            app:layout_constraintEnd_toEndOf="@id/coding_cl_ProgressBar"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/coding_dl_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="@string/dept_nleader"
+            android:textColor="#FC7419"
+            android:textSize="10sp"
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toTopOf="@id/coding_dl_ProgressBar"
+            app:layout_constraintStart_toEndOf="@id/coding_dl_ProgressBar"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/coding_me_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text="@string/you"
+            android:textAllCaps="true"
+            android:textColor="#006AFC"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@id/coding_me_ProgressBar"
+            app:layout_constraintTop_toBottomOf="@id/coding_me_ProgressBar"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/certification_TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/certification"
+            android:textColor="#888888"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/coding_me_ProgressBar"
+            tools:ignore="TextContrastCheck" />
+
+        <View
+            android:id="@+id/certification_cl_ProgressBar"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:background="#01BD01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/certification_TextView" />
+
+        <View
+            android:id="@+id/certification_dl_ProgressBar"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:background="#FC7419"
+            app:layout_constraintEnd_toEndOf="@id/vertical_guide"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/certification_TextView" />
+
+        <View
+            android:id="@+id/certification_me_ProgressBar"
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:background="#006AFC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/certification_TextView" />
+
+        <TextView
+            android:id="@+id/certification_cl_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:gravity="end"
+            android:textAllCaps="true"
+            android:text="@string/college_nleader"
+            android:textColor="#01BD01"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@id/certification_cl_ProgressBar"
+            app:layout_constraintEnd_toEndOf="@id/certification_cl_ProgressBar"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/certification_dl_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="@string/dept_nleader"
+            android:textColor="#FC7419"
+            android:textSize="10sp"
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toTopOf="@id/certification_dl_ProgressBar"
+            app:layout_constraintStart_toEndOf="@id/certification_dl_ProgressBar"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/certification_me_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text="@string/you"
+            android:textAllCaps="true"
+            android:textColor="#006AFC"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@id/certification_me_ProgressBar"
+            app:layout_constraintTop_toBottomOf="@id/certification_me_ProgressBar"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/conference_TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/conference"
+            android:textColor="#888888"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/certification_me_ProgressBar"
+            tools:ignore="TextContrastCheck" />
+
+        <View
+            android:id="@+id/conference_cl_ProgressBar"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:background="#01BD01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/conference_TextView" />
+
+        <View
+            android:id="@+id/conference_dl_ProgressBar"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:background="#FC7419"
+            app:layout_constraintEnd_toEndOf="@id/vertical_guide"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/conference_TextView" />
+
+        <View
+            android:id="@+id/conference_me_ProgressBar"
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:background="#006AFC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/conference_TextView" />
+
+        <TextView
+            android:id="@+id/conference_cl_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:gravity="end"
+            android:textAllCaps="true"
+            android:text="@string/college_nleader"
+            android:textColor="#01BD01"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@id/conference_cl_ProgressBar"
+            app:layout_constraintEnd_toEndOf="@id/conference_cl_ProgressBar"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/conference_dl_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="@string/dept_nleader"
+            android:textColor="#FC7419"
+            android:textSize="10sp"
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toTopOf="@id/conference_dl_ProgressBar"
+            app:layout_constraintStart_toEndOf="@id/conference_dl_ProgressBar"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/conference_me_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text="@string/you"
+            android:textAllCaps="true"
+            android:textColor="#006AFC"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@id/conference_me_ProgressBar"
+            app:layout_constraintTop_toBottomOf="@id/conference_me_ProgressBar"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/funding_TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/funding"
+            android:textColor="#888888"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/conference_me_ProgressBar"
+            tools:ignore="TextContrastCheck" />
+
+        <View
+            android:id="@+id/funding_cl_ProgressBar"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:background="#01BD01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/funding_TextView" />
+
+        <View
+            android:id="@+id/funding_dl_ProgressBar"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:background="#FC7419"
+            app:layout_constraintEnd_toEndOf="@id/vertical_guide"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/funding_TextView" />
+
+        <View
+            android:id="@+id/funding_me_ProgressBar"
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:background="#006AFC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/funding_TextView" />
+
+        <TextView
+            android:id="@+id/funding_cl_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:gravity="end"
+            android:textAllCaps="true"
+            android:text="@string/college_nleader"
+            android:textColor="#01BD01"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@id/funding_cl_ProgressBar"
+            app:layout_constraintEnd_toEndOf="@id/funding_cl_ProgressBar"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/funding_dl_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="@string/dept_nleader"
+            android:textColor="#FC7419"
+            android:textSize="10sp"
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toTopOf="@id/funding_dl_ProgressBar"
+            app:layout_constraintStart_toEndOf="@id/funding_dl_ProgressBar"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/funding_me_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text="@string/you"
+            android:textAllCaps="true"
+            android:textColor="#006AFC"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@id/funding_me_ProgressBar"
+            app:layout_constraintTop_toBottomOf="@id/funding_me_ProgressBar"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/consultancy_TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/consultancy"
+            android:textColor="#888888"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/funding_me_ProgressBar"
+            tools:ignore="TextContrastCheck" />
+
+        <View
+            android:id="@+id/consultancy_cl_ProgressBar"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:background="#01BD01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/consultancy_TextView" />
+
+        <View
+            android:id="@+id/consultancy_dl_ProgressBar"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:background="#FC7419"
+            app:layout_constraintEnd_toEndOf="@id/vertical_guide"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/consultancy_TextView" />
+
+        <View
+            android:id="@+id/consultancy_me_ProgressBar"
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:background="#006AFC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/consultancy_TextView" />
+
+        <TextView
+            android:id="@+id/consultancy_cl_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:gravity="end"
+            android:textAllCaps="true"
+            android:text="@string/college_nleader"
+            android:textColor="#01BD01"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@id/consultancy_cl_ProgressBar"
+            app:layout_constraintEnd_toEndOf="@id/consultancy_cl_ProgressBar"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/consultancy_dl_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="@string/dept_nleader"
+            android:textColor="#FC7419"
+            android:textSize="10sp"
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toTopOf="@id/consultancy_dl_ProgressBar"
+            app:layout_constraintStart_toEndOf="@id/consultancy_dl_ProgressBar"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/consultancy_me_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text="@string/you"
+            android:textAllCaps="true"
+            android:textColor="#006AFC"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@id/consultancy_me_ProgressBar"
+            app:layout_constraintTop_toBottomOf="@id/consultancy_me_ProgressBar"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/point_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/points"
+            android:textColor="#888888"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/consultancy_me_ProgressBar"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/point_EditTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/score"
+            android:textColor="#000"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/point_TextView"
+            app:layout_constraintTop_toTopOf="@id/point_TextView" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/logout_Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/button_border"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/logout"
+            android:textAllCaps="false"
+            android:textColor="#006AFC"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/point_EditTextView" />
+
+        <ProgressBar
+            android:id="@+id/logout_progress"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.566" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vertical_guide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.6" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/rit"
+    android:orientation="vertical"
+    tools:context=".HrStatusFragment">
+
+    <Spinner
+        android:id="@+id/spinner_hr_status"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/spinner_bg_white" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/hr_status_RV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBarHrStatus"
+        android:layout_width="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:gravity="center"
+        android:text="@string/no_request_found"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:visibility="gone" />
+</LinearLayout>

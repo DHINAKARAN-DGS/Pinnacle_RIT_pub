@@ -1,0 +1,996 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/welcome"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".InformationFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/coding_Card"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:background="#fff">
+
+                    <TextView
+                        android:id="@+id/coding_TextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:textColor="#006AFC"
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/montserrat_bold"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:text="@string/coding" />
+
+                    <TextView
+                        android:id="@+id/enterCodingScore_TextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/enter_your_coding_score"
+                        android:textColor="#8d8d8d"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@id/codingScore_EditText"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/coding_TextView"
+                        tools:ignore="TextContrastCheck" />
+
+                    <EditText
+                        android:id="@+id/codingScore_EditText"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:backgroundTint="#006AFC"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="center"
+                        android:hint="@string/_50"
+                        android:inputType="numberDecimal"
+                        android:textColor="#000"
+                        android:textColorHint="#8d8d8d"
+                        android:textCursorDrawable="@drawable/cursor"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@id/enterCodingScore_TextView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/enterCodingScore_TextView"
+                        app:layout_constraintTop_toTopOf="@id/enterCodingScore_TextView"
+                        tools:ignore="Autofill,TouchTargetSizeCheck" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/codingAddDoc_Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/button_border"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/reset"
+                        android:textAllCaps="false"
+                        android:textColor="#006AFC"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@id/coding_save_Button"
+                        app:layout_constraintTop_toTopOf="@id/coding_save_Button"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/coding_save_Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/button_background"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/save"
+                        android:textAllCaps="false"
+                        android:textColor="#fff"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="@id/codingScore_EditText"
+                        app:layout_constraintTop_toBottomOf="@id/enterCodingScore_TextView"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+
+                    <TextView
+                        android:id="@+id/codingStatus_TextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:textColor="#006AFC"
+                        android:fontFamily="@font/raleway_semibold"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/coding_Trash"
+                        app:layout_constraintTop_toBottomOf="@id/coding_save_Button"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/coding_Trash"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_baseline_delete_24"
+                        app:layout_constraintBottom_toBottomOf="@+id/codingStatus_TextView"
+                        app:layout_constraintTop_toTopOf="@+id/codingStatus_TextView"
+                        app:layout_constraintStart_toEndOf="@id/codingStatus_TextView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:tint="@color/rit"
+                        tools:ignore="ContentDescription" />
+
+                    <ProgressBar
+                        android:id="@+id/coding_Progress"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:visibility="invisible"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:ignore="TooManyViews" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mentorship_Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="#fff"
+                app:cardCornerRadius="16dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/mentorship_TextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:gravity="center"
+                        android:text="@string/mentorship_effectiveness"
+                        android:textAllCaps="true"
+                        android:textColor="#006AFC"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/mentorshipScore_TextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/choose_the_applicable_criteria"
+                        android:textColor="#8d8d8d"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/mentorship_TextView"
+                        tools:ignore="TextContrastCheck" />
+
+                    <RadioGroup
+                        android:id="@+id/mentorship_RadioGroup"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/mentorshipScore_TextView"
+                        app:layout_constraintVertical_bias="0.5">
+
+                        <RadioButton
+                            android:id="@+id/mentorship_criteria_one"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="#006AFC"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/_70_students_performed_any_3_activities"
+                            android:textColor="@drawable/radiobutton_style"
+                            android:textSize="16sp"
+                            tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+
+                        <RadioButton
+                            android:id="@+id/mentorship_criteria_two"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="#006AFC"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/atleast_80_students_participated_in_all_4_activities"
+                            android:textColor="@drawable/radiobutton_style"
+                            android:textSize="16sp"
+                            tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+
+                        <RadioButton
+                            android:id="@+id/mentorship_criteria_three"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="#006AFC"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/atleast_80_students_winner_citation"
+                            android:textColor="@drawable/radiobutton_style"
+                            android:textSize="16sp"
+                            tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+
+                        <RadioButton
+                            android:id="@+id/mentorship_criteria_four"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="#006AFC"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/all_students_participated_in_all_4_activities"
+                            android:textColor="@drawable/radiobutton_style"
+                            android:textSize="16sp"
+                            tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+
+                        <RadioButton
+                            android:id="@+id/mentorship_criteria_five"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="#006AFC"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/all_students_participated_in_all_4_activities_with_atleast_3_winners_citation"
+                            android:textColor="@drawable/radiobutton_style"
+                            android:textSize="16sp"
+                            tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+                    </RadioGroup>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/mentorshipAddDoc_Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/button_border"
+                        android:fontFamily="@font/montserrat"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:text="@string/reset"
+                        android:textAllCaps="false"
+                        android:textColor="#006AFC"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@id/mentorship_save_Button"
+                        app:layout_constraintTop_toTopOf="@id/mentorship_save_Button"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/mentorship_save_Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/button_background"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/save"
+                        android:textAllCaps="false"
+                        android:textColor="#fff"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/mentorship_RadioGroup"
+                        tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+
+                    <TextView
+                        android:id="@+id/mentorStatus_TextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/raleway_semibold"
+                        android:gravity="center"
+                        android:textColor="#006AFC"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/mentorship_Trash"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/mentorship_save_Button" />
+
+                    <ImageView
+                        android:id="@+id/mentorship_Trash"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_baseline_delete_24"
+                        app:layout_constraintBottom_toBottomOf="@+id/mentorStatus_TextView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/mentorStatus_TextView"
+                        app:layout_constraintTop_toTopOf="@+id/mentorStatus_TextView"
+                        app:tint="@color/rit"
+                        tools:ignore="ContentDescription" />
+
+                    <ProgressBar
+                        android:id="@+id/mentorship_Progress"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:visibility="invisible"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:ignore="TooManyViews" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/certification_Card"
+                app:cardCornerRadius="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:background="#fff">
+
+                    <TextView
+                        android:id="@+id/certification_TextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:textColor="#006AFC"
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/montserrat_bold"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:text="@string/certification" />
+
+                    <TextView
+                        android:id="@+id/ongoingCertification_TextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/ongoing_certifications"
+                        android:textColor="#8d8d8d"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/certification_TextView"
+                        tools:ignore="TextContrastCheck" />
+
+                    <RadioGroup
+                        android:id="@+id/ongoingCertification_RadioGroup"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/ongoingCertification_TextView"
+                        app:layout_constraintTop_toBottomOf="@id/ongoingCertification_TextView">
+
+                        <RadioButton
+                            android:id="@+id/ongoingCertification_One"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:buttonTint="#006AFC"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/one"
+                            android:textColor="@drawable/radiobutton_style"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:id="@+id/ongoingCertification_Two"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:buttonTint="#006AFC"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/two"
+                            android:textColor="@drawable/radiobutton_style"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:id="@+id/ongoingCertification_Three"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:buttonTint="#006AFC"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/three"
+                            android:textColor="@drawable/radiobutton_style"
+                            android:textSize="16sp"
+                            tools:ignore="TextContrastCheck" />
+
+                        <RadioButton
+                            android:id="@+id/ongoingCertification_Four"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:buttonTint="#006AFC"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/four"
+                            android:textColor="@drawable/radiobutton_style"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:id="@+id/ongoingCertification_Five"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:buttonTint="#006AFC"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/five"
+                            android:textColor="@drawable/radiobutton_style"
+                            android:textSize="16sp" />
+
+                    </RadioGroup>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/certificationAddDoc_Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/button_border"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="#006AFC"
+                        android:textSize="16sp"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:textAllCaps="false"
+                        app:layout_constraintTop_toTopOf="@id/certification_save_Button"
+                        app:layout_constraintEnd_toStartOf="@id/certification_save_Button"
+                        android:text="@string/reset" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/certification_save_Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:textAllCaps="false"
+                        android:background="@drawable/button_background"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="#fff"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="@id/ongoingCertification_RadioGroup"
+                        app:layout_constraintTop_toBottomOf="@id/ongoingCertification_RadioGroup"
+                        android:text="@string/save" />
+
+                    <TextView
+                        android:id="@+id/certificationStatus_TextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:textColor="#006AFC"
+                        android:fontFamily="@font/raleway_semibold"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/certification_Trash"
+                        app:layout_constraintTop_toBottomOf="@id/certification_save_Button" />
+
+                    <ImageView
+                        android:id="@+id/certification_Trash"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_baseline_delete_24"
+                        app:layout_constraintBottom_toBottomOf="@+id/certificationStatus_TextView"
+                        app:layout_constraintTop_toTopOf="@+id/certificationStatus_TextView"
+                        app:layout_constraintStart_toEndOf="@id/certificationStatus_TextView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:tint="@color/rit"
+                        tools:ignore="ContentDescription" />
+
+                    <ProgressBar
+                        android:id="@+id/certification_Progress"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:visibility="invisible"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:ignore="TooManyViews" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/conference_Card"
+                app:cardCornerRadius="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:background="#fff">
+
+                    <TextView
+                        android:id="@+id/conference_TextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:textColor="#006AFC"
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/montserrat_bold"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:text="@string/conference" />
+
+                    <TextView
+                        android:id="@+id/activeOrganizer_TextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/active_conference_organizer"
+                        android:textColor="#8d8d8d"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@id/activeOrganizer_RadioGroup"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/conference_TextView"
+                        tools:ignore="TextContrastCheck" />
+
+                    <RadioGroup
+                        android:id="@+id/activeOrganizer_RadioGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintVertical_bias="0.5"
+                        app:layout_constraintTop_toTopOf="@id/activeOrganizer_TextView"
+                        app:layout_constraintBottom_toBottomOf="@id/activeOrganizer_TextView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/activeOrganizer_TextView">
+
+                        <RadioButton
+                            android:id="@+id/activeOrganizer_Yes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="#006AFC"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/yes"
+                            android:textColor="@drawable/radiobutton_style"
+                            android:textSize="16sp"
+                            tools:ignore="DuplicateSpeakableTextCheck" />
+
+                        <RadioButton
+                            android:id="@+id/activeOrganizer_No"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="#006AFC"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/no"
+                            android:textColor="@drawable/radiobutton_style"
+                            android:textSize="16sp"
+                            tools:ignore="DuplicateSpeakableTextCheck" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/credentialInvited_TextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/invited_credential_approved_international_resource_person"
+                        android:textColor="#8d8d8d"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@id/credentialInvited_RadioGroup"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/activeOrganizer_TextView"
+                        tools:ignore="TextContrastCheck" />
+
+                    <RadioGroup
+                        android:id="@+id/credentialInvited_RadioGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintVertical_bias="0.5"
+                        app:layout_constraintTop_toTopOf="@id/credentialInvited_TextView"
+                        app:layout_constraintBottom_toBottomOf="@id/credentialInvited_TextView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/credentialInvited_TextView">
+
+                        <RadioButton
+                            android:id="@+id/credentialInvited_Yes"
+                            android:textSize="16sp"
+                            android:buttonTint="#006AFC"
+                            android:textColor="@drawable/radiobutton_style"
+                            android:fontFamily="@font/montserrat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/credentialInvited_No"
+                            android:textSize="16sp"
+                            android:buttonTint="#006AFC"
+                            android:textColor="@drawable/radiobutton_style"
+                            android:fontFamily="@font/montserrat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/no" />
+                    </RadioGroup>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/conferenceAddDoc_Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/button_border"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="#006AFC"
+                        android:textSize="16sp"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:textAllCaps="false"
+                        app:layout_constraintTop_toTopOf="@id/conference_save_Button"
+                        app:layout_constraintEnd_toStartOf="@id/conference_save_Button"
+                        android:text="@string/reset" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/conference_save_Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/button_background"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/save"
+                        android:textAllCaps="false"
+                        android:textColor="#fff"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="@id/credentialInvited_RadioGroup"
+                        app:layout_constraintTop_toBottomOf="@id/credentialInvited_TextView"
+                        tools:ignore="TextContrastCheck" />
+
+                    <TextView
+                        android:id="@+id/conferenceStatus_TextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:textColor="#006AFC"
+                        android:fontFamily="@font/raleway_semibold"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/conference_Trash"
+                        app:layout_constraintTop_toBottomOf="@id/conference_save_Button" />
+
+                    <ImageView
+                        android:id="@+id/conference_Trash"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_baseline_delete_24"
+                        app:layout_constraintBottom_toBottomOf="@+id/conferenceStatus_TextView"
+                        app:layout_constraintTop_toTopOf="@+id/conferenceStatus_TextView"
+                        app:layout_constraintStart_toEndOf="@id/conferenceStatus_TextView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:tint="@color/rit"
+                        tools:ignore="ContentDescription" />
+
+                    <ProgressBar
+                        android:id="@+id/conference_Progress"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:visibility="invisible"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:ignore="TooManyViews" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/funding_Card"
+                app:cardCornerRadius="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:background="#fff">
+
+                    <TextView
+                        android:id="@+id/funding_TextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:textColor="#006AFC"
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/montserrat_bold"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:text="@string/funding" />
+
+                    <TextView
+                        android:id="@+id/fundingSelection_TextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/funding"
+                        android:textColor="#8d8d8d"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/funding_TextView"
+                        tools:ignore="TextContrastCheck" />
+
+                    <EditText
+                        android:id="@+id/funding_EditText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:backgroundTint="#006AFC"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="center"
+                        android:hint="@string/enter_the_amount"
+                        android:inputType="numberDecimal"
+                        android:textColor="#000"
+                        android:textColorHint="#8d8d8d"
+                        android:textCursorDrawable="@drawable/cursor"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/fundingSelection_TextView"
+                        app:layout_constraintTop_toBottomOf="@id/funding_TextView"
+                        tools:ignore="Autofill,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/fundingAddDoc_Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/button_border"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="#006AFC"
+                        android:textSize="16sp"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:textAllCaps="false"
+                        app:layout_constraintTop_toTopOf="@id/funding_save_Button"
+                        app:layout_constraintEnd_toStartOf="@id/funding_save_Button"
+                        android:text="@string/reset" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/funding_save_Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:textAllCaps="false"
+                        android:background="@drawable/button_background"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="#fff"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="@id/funding_EditText"
+                        app:layout_constraintTop_toBottomOf="@id/funding_EditText"
+                        android:text="@string/save" />
+
+                    <TextView
+                        android:id="@+id/fundingStatus_TextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:textColor="#006AFC"
+                        android:fontFamily="@font/raleway_semibold"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/funding_Trash"
+                        app:layout_constraintTop_toBottomOf="@id/funding_save_Button" />
+
+                    <ImageView
+                        android:id="@+id/funding_Trash"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_baseline_delete_24"
+                        app:layout_constraintBottom_toBottomOf="@+id/fundingStatus_TextView"
+                        app:layout_constraintTop_toTopOf="@+id/fundingStatus_TextView"
+                        app:layout_constraintStart_toEndOf="@id/fundingStatus_TextView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:tint="@color/rit"
+                        tools:ignore="ContentDescription" />
+
+                    <ProgressBar
+                        android:id="@+id/funding_Progress"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:visibility="invisible"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:ignore="TooManyViews" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/consultancy_Card"
+                app:cardCornerRadius="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:background="#fff">
+
+                    <TextView
+                        android:id="@+id/consultancyd_TextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:textColor="#006AFC"
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/montserrat_bold"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:text="@string/consultancy" />
+
+                    <TextView
+                        android:id="@+id/consultancy_TextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/consultancy"
+                        android:textColor="#8d8d8d"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/consultancyd_TextView"
+                        tools:ignore="TextContrastCheck" />
+
+                    <EditText
+                        android:id="@+id/consultancy_EditText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:backgroundTint="#006AFC"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="center"
+                        android:hint="@string/enter_the_amount"
+                        android:inputType="numberDecimal"
+                        android:textColor="#000"
+                        android:textColorHint="#8d8d8d"
+                        android:textCursorDrawable="@drawable/cursor"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/consultancy_TextView"
+                        app:layout_constraintTop_toTopOf="@+id/consultancy_TextView"
+                        tools:ignore="Autofill,TouchTargetSizeCheck" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/consultancy_add_Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/button_border"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="#006AFC"
+                        android:textSize="16sp"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:textAllCaps="false"
+                        app:layout_constraintTop_toTopOf="@id/consultancy_save_Button"
+                        app:layout_constraintEnd_toStartOf="@id/consultancy_save_Button"
+                        android:text="@string/reset" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/consultancy_save_Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:textAllCaps="false"
+                        android:background="@drawable/button_background"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="#fff"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="@id/consultancy_EditText"
+                        app:layout_constraintTop_toBottomOf="@id/consultancy_EditText"
+                        android:text="@string/save" />
+
+                    <TextView
+                        android:id="@+id/consultancyStatus_TextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:textColor="#006AFC"
+                        android:fontFamily="@font/raleway_semibold"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/consultancy_Trash"
+                        app:layout_constraintTop_toBottomOf="@id/consultancy_save_Button" />
+
+                    <ImageView
+                        android:id="@+id/consultancy_Trash"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_baseline_delete_24"
+                        app:layout_constraintBottom_toBottomOf="@+id/consultancyStatus_TextView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/consultancyStatus_TextView"
+                        app:layout_constraintTop_toTopOf="@+id/consultancyStatus_TextView"
+                        app:tint="@color/rit"
+                        tools:ignore="ContentDescription" />
+
+                    <ProgressBar
+                        android:id="@+id/consultancy_Progress"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:visibility="invisible"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:ignore="TooManyViews" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/screen_Progress"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:visibility="invisible"
+            android:layout_marginBottom="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="TooManyViews" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
